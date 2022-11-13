@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Game</title>
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <link rel="icon" href="gamepad-solid.png" type="image/x-icon" />
+    <link rel="stylesheet" href="main.css" />
+    <script
+      src="https://kit.fontawesome.com/10ac64ce8e.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta name="description" content="This is my first game." />
+  </head>
+  <body onkeydown="Key(event)" id="container">
+    <!-- math -->
+    <div id="math">
+      <div id="borderhight">
+        <div><i id="hightScore" class="fas fa-trophy"></i></div>
+      </div>
+      <canvas id="out" width="400px" height="120px"></canvas>
+      <h5 id="score" class="fa-solid fa-bullseye"></h5>
+      <h5><i id="time" class="fa-solid fa-hourglass-start"></i></h5>
+      <div id="butVar">
+        <button class="var" onclick="check(1)" id="var1"></button>
+        <button class="var" onclick="check(2)" id="var2"></button>
+        <button class="var" onclick="check(3)" id="var3"></button>
+      </div>
+    </div>
+
+    <!-- box game over -->
+    <div class="gameover" id="end-task">
+      <div id="box">
+        <h2>Game Over</h2>
+        <p id="score1"></p>
+        <button onclick="play_again()" id="playagain">
+          <i class="fas fa-undo"></i>
+        </button>
+      </div>
+    </div>
+    <!-- pause -->
+    <button onclick="pause()" id="BtnPause">
+      <i class="fas fa-pause fa-2x"></i>
+    </button>
+    <div id="pause" class="gameover">
+      <div id="box2">
+        <h2>Game Pause</h2>
+        <p id="score2"></p>
+        <button onclick="Continue()"><i class="fas fa-play"></i></button>
+        <button onclick="play_again()"><i class="fas fa-undo"></i></button>
+        <button onclick="playSong()">
+          <i id="btnMute" class="fas fa-volume-mute"></i>
+        </button>
+      </div>
+    </div>
+    <audio id="true">
+      <source src="true.mp3" type="audio/mpeg" />
+    </audio>
+    <audio src="false.mp3" id="false"></audio>
+    <audio id="effectSound" loop>
+      <source src="bgSound.ogg" type="audio/ogg" />
+      <source src="bgSound.mp3" type="audio/mpeg" />
+    </audio>
+    <script src="main.js"></script>
+  </body>
+</html>
